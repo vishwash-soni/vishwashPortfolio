@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global base styles */
+@layer base {
+  * {
+    @apply border-ink-600;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-ink-950 text-zinc-200 font-sans antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display;
+  }
+
+  /* Visible keyboard focus for accessibility */
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible {
+    @apply outline-none ring-2 ring-cyan-400/70 ring-offset-2 ring-offset-ink-950;
+  }
+}
+
+@layer components {
+  /* Reusable glass card style - glassmorphism used sparingly on key surfaces */
+  .glass-card {
+    @apply bg-ink-800/60 backdrop-blur-xl border border-white/[0.08] rounded-2xl;
+  }
+
+  /* Gradient text used only for signature accents (name, key highlights) */
+  .gradient-text {
+  @apply bg-gradient-to-r from-[#f5f7f7] via-[#676868] to-[#1a1a1b] bg-clip-text text-transparent;
+}
+
+  /* Section container - consistent max width and padding across the page */
+  .section-container {
+    @apply max-w-6xl mx-auto px-6 sm:px-8 lg:px-10;
+  }
+
+  /* Primary button */
+  .btn-primary {
+  @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full
+         bg-gradient-to-r from-[#515151] via-[#262626] to-[#181818]
+         text-white font-semibold
+         shadow-lg hover:scale-105 active:scale-95
+         transition-all duration-300;
+}
+
+  /* Secondary / outline button */
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full
+           border border-white/15 text-zinc-200 hover:bg-white/5 hover:border-white/30
+           transition-all duration-300;
+  }
+
+  /* Reduced motion support: respect user preference site-wide */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-float,
+    .animate-pulse-slow {
+      animation: none !important;
+    }
+  }
+}
