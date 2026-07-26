@@ -1,24 +1,41 @@
+import { lazy, Suspense } from "react";
+
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
-import Achievements from "../components/Achievements";
-import Projects from "../components/Projects";
-import Certificates from "../components/Certificates";
-import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 
-// Home page — assembles every section in order.
-// This is the only place section order needs to change.
+// Lazy-loaded components
+const Achievements = lazy(() => import("../components/Achievements"));
+const Projects = lazy(() => import("../components/Projects"));
+const Certificates = lazy(() => import("../components/Certificates"));
+const Contact = lazy(() => import("../components/Contact"));
+
+function SectionLoader() {
+  return (
+    <div className="flex justify-center py-16">
+      <div className="h-8 w-8 animate-spin rounded-full border-4 border-zinc-700 border-t-white" />
+    </div>
+  );
+}
+
 function Home() {
   return (
     <div className="relative min-h-screen">
       <Navbar />
+
       <main>
+        {/* Above-the-fold content */}
         <Hero />
-        <Achievements />
-        <Projects />
-        <Certificates />
-        <Contact />
+
+        {/* Below-the-fold content */}
+        <Suspense fallback={<SectionLoader />}>
+          <Achievements />
+          <Projects />
+          <Certificates />
+          <Contact />
+        </Suspense>
       </main>
+
       <Footer />
     </div>
   );
