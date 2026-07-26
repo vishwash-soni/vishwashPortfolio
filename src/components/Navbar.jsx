@@ -40,6 +40,7 @@ function Navbar() {
         {/* Resume download button (desktop) */}
         <a
           href={profile.resumeUrl}
+          target="_blank"
           download
           className="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm border border-white/15 text-zinc-200 hover:bg-white/5 hover:border-white/30 transition-all duration-300"
         >
@@ -75,6 +76,7 @@ function Navbar() {
             <li>
               <a
                 href={profile.resumeUrl}
+                target="_blank"
                 download
                 className="inline-flex items-center gap-2 text-white"
               >

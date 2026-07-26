@@ -32,7 +32,7 @@ function ContactForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus("submitting");
-
+    
     // TODO: replace this block with a real Firebase/Supabase call (see notes above)
     await new Promise((resolve) => setTimeout(resolve, 800)); // simulated delay
 
