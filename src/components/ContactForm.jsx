@@ -1,29 +1,19 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Send } from "lucide-react";
+import emailjs from '@emailjs/browser';
 
-// ---------------------------------------------------------------
-// ContactForm — controlled form ready for future backend integration.
-//
-// HOW TO CONNECT LATER (Firebase / Supabase):
-// 1. Import your Firebase/Supabase client at the top of this file.
-// 2. Inside handleSubmit, replace the "TODO" block with a call like:
-//      await addDoc(collection(db, "messages"), formData);        // Firebase
-//      await supabase.from("messages").insert([formData]);        // Supabase
-// 3. Handle loading / success / error states using the existing
-//    `status` state variable below — no other structural change needed.
-// ---------------------------------------------------------------
 function ContactForm() {
-  // Holds the current values of all form fields
+  const form = useRef();
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
 
-  // Tracks submission state: "idle" | "submitting" | "success"
+  // "idle" | "submitting" | "success" | "error"
   const [status, setStatus] = useState("idle");
 
-  // Updates formData whenever any input changes
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -32,19 +22,27 @@ function ContactForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus("submitting");
-    
-    // TODO: replace this block with a real Firebase/Supabase call (see notes above)
-    await new Promise((resolve) => setTimeout(resolve, 800)); // simulated delay
 
-    setStatus("success");
-    setFormData({ name: "", email: "", message: "" });
+    try {
+      await emailjs.sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        form.current,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
 
-    // Reset the success message after a few seconds
+      setStatus("success");
+      setFormData({ name: "", email: "", message: "" });
+    } catch (err) {
+      console.error("EmailJS error:", err);
+      setStatus("error");
+    }
+
     setTimeout(() => setStatus("idle"), 3000);
   };
 
   return (
-    <form onSubmit={handleSubmit} className="glass-card p-8 space-y-5">
+    <form ref={form} onSubmit={handleSubmit} className="glass-card p-8 space-y-5">
       <div>
         <label htmlFor="name" className="block text-sm font-medium text-zinc-300 mb-2">
           Name
@@ -57,7 +55,7 @@ function ContactForm() {
           value={formData.name}
           onChange={handleChange}
           placeholder="Your name"
-          className="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/[0.08] text-white placeholder-zinc-500 focus:border-cyan-400/50 outline-none transition-colors duration-200"
+          className="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/[0.08] text-white placeholder-zinc-500 outline-none focus:outline-none focus:ring-0 focus:ring-transparent focus:shadow-none focus:border-white transition-colors duration-200"
         />
       </div>
 
@@ -73,7 +71,7 @@ function ContactForm() {
           value={formData.email}
           onChange={handleChange}
           placeholder="you@example.com"
-          className="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/[0.08] text-white placeholder-zinc-500 focus:border-cyan-400/50 outline-none transition-colors duration-200"
+          className="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/[0.08] text-white placeholder-zinc-500 outline-none focus:outline-none focus:ring-0 focus:ring-transparent focus:shadow-none focus:border-white transition-colors duration-200"
         />
       </div>
 
@@ -89,7 +87,7 @@ function ContactForm() {
           value={formData.message}
           onChange={handleChange}
           placeholder="Tell me about your project or opportunity..."
-          className="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/[0.08] text-white placeholder-zinc-500 focus:border-cyan-400/50 outline-none transition-colors duration-200 resize-none"
+          className="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/[0.08] text-white placeholder-zinc-500 outline-none focus:outline-none focus:ring-0 focus:ring-transparent focus:shadow-none focus:border-white transition-colors duration-200"
         />
       </div>
 
@@ -103,10 +101,18 @@ function ContactForm() {
       </button>
 
       {status === "success" && (
-        <p className="text-sm text-cyan-300 text-center">
+        <p className="text-sm text-[#00ff40] text-center">
           Message sent! I'll get back to you soon.
         </p>
       )}
+
+      {status === "error" && (
+        <p className="text-sm text-[#f00] text-center">
+          Something went wrong. Please try again or email me directly.
+        </p>
+      )}
+
+      
     </form>
   );
 }
