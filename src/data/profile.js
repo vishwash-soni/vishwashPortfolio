@@ -10,7 +10,7 @@ const profile = {
   location: "Varanasi, Uttar Pradesh, India",
   openToRelocate: "Open to relocating (incl. Bengaluru, Gurugram)",
   email: " vishwashsoni348@gmail.com", // TODO: replace with your real email
-  resumeUrl: "https://drive.google.com/file/d/1ysr5DEymmWRmvD8jWKTgOF-leViohjyP/view", // TODO: place your resume PDF inside the /public folder
+  resumeUrl: "https://drive.google.com/file/d/1oxm-86bzxF9AD0WQpCNIHv9axhiMYGA8/view?usp=sharing", // TODO: place your resume PDF inside the /public folder
   socials: {
     github: "https://github.com/vishwash-soni", // TODO
     linkedin: "https://www.linkedin.com/in/vishwash-soni-732414263/", // TODO
