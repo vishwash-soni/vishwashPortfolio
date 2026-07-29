@@ -8,7 +8,7 @@ export const stats = [
   { label: "Problems Solved", value: "900+", sub: "on LeetCode" },
   { label: "Day Streak", value: "365", sub: "consistent daily practice" },
   { label: "NeetCode 150", value: "100%", sub: "completed" },
-  { label: "CGPA", value: "8.0", sub: "B.Tech CSE, 2026" },
+  { label: "CGPA", value: "7.9", sub: "B.Tech CSE, 2026" },
 ];
 
 // Core skills grouped by category
