@@ -3,7 +3,7 @@ import { lazy, Suspense } from "react";
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import Footer from "../components/Footer";
-
+import Ai from "../components/Ai";
 // Lazy-loaded components
 const Achievements = lazy(() => import("../components/Achievements"));
 const Projects = lazy(() => import("../components/Projects"));
@@ -37,6 +37,8 @@ function Home() {
       </main>
 
       <Footer />
+
+      <Ai></Ai>
     </div>
   );
 }

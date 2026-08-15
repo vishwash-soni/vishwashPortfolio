@@ -5,6 +5,17 @@
 const projects = [
   {
     id: 1,
+    title: "AI Portfolio Assistant",
+    description:
+      "A full-stack conversational AI chatbot that allows recruiters to interactively explore my skills, projects, experience, and background using natural language, powered by Groq AI.",
+    image:
+      "https://plus.unsplash.com/premium_photo-1677094310919-d0361465d3be?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    techStack: ["React.js", "Node.js", "Express.js", "Groq SDK", "Tailwind CSS"],
+    githubUrl: "https://github.com/vishwash-soni/My-Ai-Assistant",
+    liveUrl: "https://my-ai-assistant-silk.vercel.app/",
+  },
+  {
+    id: 2,
     title: "ReachAI",
     description:
       "An AI-powered cold email generator that helps job seekers create personalized, high-converting outreach emails in seconds using Groq AI.",
@@ -15,7 +26,7 @@ const projects = [
     liveUrl: "https://reach-ai-iota.vercel.app/", // TODO
   },
   {
-    id: 2,
+    id: 3,
     title: "Contact Manager App",
     description:
       "A full-featured contact management application with real-time data sync, search, and CRUD operations powered by Firebase Firestore.",
@@ -26,46 +37,46 @@ const projects = [
     liveUrl: "https://contact-27.netlify.app/", // TODO
   },
   {
-    id: 3,
+    id: 4,
     title: "Portfolio Website",
     description:
       "A personal portfolio website built with React.js and Tailwind CSS to showcase my projects, skills, and experience with a modern, responsive design.",
     image:
       "https://plus.unsplash.com/premium_vector-1732319936889-bd5807d52bab?q=80&w=783&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    techStack: ["JavaScript (ES6+)","React.js","React Hooks","Tailwind CSS","Vercel"],
+    techStack: ["JavaScript (ES6+)", "React.js", "React Hooks", "Tailwind CSS", "Vercel"],
     githubUrl: "https://github.com/vishwash-soni/vishwashPortfolio", // TODO
     liveUrl: "vishwash-portfolio.vercel.app", // TODO
   },
   {
-    id: 4,
+    id: 5,
     title: "Dice Game",
     description:
       "A fun React.js dice game that challenges players to predict the dice roll while showcasing React state management, event handling, and score tracking. 🎲",
     image:
       "https://plus.unsplash.com/premium_vector-1761061643341-b05f45f9ff25?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    techStack: ["React.js", "React Hooks", "UseState","State Management"],
+    techStack: ["React.js", "React Hooks", "UseState", "State Management"],
     githubUrl: "https://github.com/vishwash-soni/React-Projects/tree/main/project-3", // TODO
     liveUrl: "https://dice-game-27.netlify.app/", // TODO
   },
   {
-    id: 5,
+    id: 6,
     title: "Spotify Clone",
     description:
       "A Spotify-inspired music player built with HTML, CSS, and JavaScript featuring play/pause, shuffle, loop, search, download, and WhatsApp sharing.",
     image:
       "https://plus.unsplash.com/premium_vector-1743702900080-783453cd0bbf?q=80&w=580&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    techStack: ["HTML5", "CSS", "JavaScript (ES6+)","Responsive Design"],
+    techStack: ["HTML5", "CSS", "JavaScript (ES6+)", "Responsive Design"],
     githubUrl: "https://github.com/vishwash-soni/Spotify-Clone", // TODO
     liveUrl: "https://vishwash-soni.netlify.app/", // TODO
   },
   {
-    id: 6,
+    id: 7,
     title: "QR Code Generator",
     description:
       "A simple QR Code Generator that converts text or URLs into QR codes using an external API with HTML, CSS, and JavaScript.",
     image:
       "https://plus.unsplash.com/premium_vector-1776134221069-c8c4e5de9b5e?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    techStack: ["HTML5", "CSS", "JavaScript (ES6+)","Fetch API","API Integration"],
+    techStack: ["HTML5", "CSS", "JavaScript (ES6+)", "Fetch API", "API Integration"],
     githubUrl: "https://github.com/vishwash-soni", // TODO
     liveUrl: "https://qr-code-generator-soni.netlify.app/", // TODO
   },

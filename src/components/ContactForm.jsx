@@ -1,6 +1,8 @@
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { useForm } from "react-hook-form";
+import { BsSendArrowUp } from "react-icons/bs";
+import { BsSendExclamation } from "react-icons/bs";
 
 function ContactForm() {
   const [status, setStatus] = useState("idle");
@@ -117,7 +119,7 @@ function ContactForm() {
         disabled={isSubmitting}
         className="btn-primary w-full disabled:opacity-60 disabled:cursor-not-allowed"
       >
-        {isSubmitting ? "Sending..." : "Send Message"}
+        {isSubmitting ? <div className="flex gap-2 items-center">Sending <BsSendExclamation className="relative top-[px-8]"/></div> : <div className="flex gap-2 items-center">Send Message <BsSendArrowUp className="relative top-[px-8]"/></div>}
       </button>
 
       {/* Validation Errors */}
