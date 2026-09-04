@@ -13,7 +13,7 @@ const profile = {
   resumeUrl: "https://drive.google.com/file/d/1J0tlsH0tK1rNuk7onMutZAnpezGI8NgG/view?usp=sharing", // TODO: place your resume PDF inside the /public folder
   socials: {
     github: "https://github.com/vishwash-soni", // TODO
-    linkedin: "www.linkedin.com/in/vishwashsoni", // TODO
+    linkedin: "https://linkedin.com/in/vishwashsoni", // TODO
     leetcode: "https://leetcode.com/u/Vishwash_Soni/", // TODO
   },
 };
