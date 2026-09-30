@@ -7,7 +7,7 @@ const projects = [
     id: 1,
     title: "NexContact",
     description:
-      "A full-stack MERN contact manager with complete CRUD and name search, where every contact is scoped to its owner through protected routes on both the React frontend and Express API. Features secure JWT authentication in HTTP-only cookies, bcrypt password hashing, and email OTP verification at signup with expiry, resend limits, and lockout. Profile images are uploaded through Cloudinary.",
+      "A full-stack MERN contact manager with CRUD, name search, and per-user protected routes. Features JWT auth in HTTP-only cookies, bcrypt hashing, email OTP verification, and Cloudinary profile image uploads.",
     image: "https://plus.unsplash.com/premium_photo-1676057060928-c717a8e96784?q=80&w=1316&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     techStack: ["React.js", "Node.js", "Express.js", "MongoDB", "JWT", "Cloudinary", "Multer", "React Hook Form", "Brevo"],
     githubUrl: "https://github.com/vishwash-soni/NexContact-MERN",
