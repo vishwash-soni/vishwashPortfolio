@@ -5,6 +5,16 @@
 const projects = [
   {
     id: 1,
+    title: "NexContact",
+    description:
+      "A full-stack MERN contact manager with complete CRUD and name search, where every contact is scoped to its owner through protected routes on both the React frontend and Express API. Features secure JWT authentication in HTTP-only cookies, bcrypt password hashing, and email OTP verification at signup with expiry, resend limits, and lockout. Profile images are uploaded through Cloudinary.",
+    image: "https://plus.unsplash.com/premium_photo-1676057060928-c717a8e96784?q=80&w=1316&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    techStack: ["React.js", "Node.js", "Express.js", "MongoDB", "JWT", "Cloudinary", "Multer", "React Hook Form", "Brevo"],
+    githubUrl: "https://github.com/vishwash-soni/NexContact-MERN",
+    liveUrl: "https://nex-contact-mern.vercel.app/",
+  },
+  {
+    id: 2,
     title: "AI Portfolio Assistant",
     description:
       "A full-stack conversational AI chatbot that allows recruiters to interactively explore my skills, projects, experience, and background using natural language, powered by Groq AI.",
@@ -15,7 +25,7 @@ const projects = [
     liveUrl: "https://my-ai-assistant-silk.vercel.app/",
   },
   {
-    id: 2,
+    id: 3,
     title: "ReachAI",
     description:
       "An AI-powered cold email generator that helps job seekers create personalized, high-converting outreach emails in seconds using Groq AI.",
@@ -26,7 +36,7 @@ const projects = [
     liveUrl: "https://reach-ai-iota.vercel.app/", // TODO
   },
   {
-    id: 3,
+    id: 4,
     title: "Contact Manager App",
     description:
       "A full-featured contact management application with real-time data sync, search, and CRUD operations powered by Firebase Firestore.",
@@ -37,7 +47,7 @@ const projects = [
     liveUrl: "https://contact-27.netlify.app/", // TODO
   },
   {
-    id: 4,
+    id: 5,
     title: "Portfolio Website",
     description:
       "A personal portfolio website built with React.js and Tailwind CSS to showcase my projects, skills, and experience with a modern, responsive design.",
@@ -48,7 +58,7 @@ const projects = [
     liveUrl: "vishwash-portfolio.vercel.app", // TODO
   },
   {
-    id: 5,
+    id: 6,
     title: "Dice Game",
     description:
       "A fun React.js dice game that challenges players to predict the dice roll while showcasing React state management, event handling, and score tracking. 🎲",
@@ -59,7 +69,7 @@ const projects = [
     liveUrl: "https://dice-game-27.netlify.app/", // TODO
   },
   {
-    id: 6,
+    id: 7,
     title: "Spotify Clone",
     description:
       "A Spotify-inspired music player built with HTML, CSS, and JavaScript featuring play/pause, shuffle, loop, search, download, and WhatsApp sharing.",
@@ -70,7 +80,7 @@ const projects = [
     liveUrl: "https://vishwash-soni.netlify.app/", // TODO
   },
   {
-    id: 7,
+    id: 8,
     title: "QR Code Generator",
     description:
       "A simple QR Code Generator that converts text or URLs into QR codes using an external API with HTML, CSS, and JavaScript.",
